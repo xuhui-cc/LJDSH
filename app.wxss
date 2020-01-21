@@ -1,0 +1,8 @@
+/**app.wxss**/
+.container {
+  /* height: 2000; */
+  display: flex;
+  overflow-x:hidden;
+  flex-direction: column;
+} 
+

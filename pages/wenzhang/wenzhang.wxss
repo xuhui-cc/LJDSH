@@ -1,0 +1,82 @@
+page {
+  background-color: #F8F8F8;
+}
+.container{
+  
+  
+  
+}
+.date{
+  margin-top: 36rpx;
+  width:750rpx;
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  text-align: center;
+  line-height:24rpx;
+  color:rgba(153,153,153,1);
+  opacity:1;
+}
+.login{
+  margin-top: 18rpx;
+  margin-left: 30rpx;
+  position: absolute;
+  width: 690rpx;
+  height: 406rpx;
+  background: transparent;
+}
+.login::after {
+  border: none;
+}
+.cs{
+  margin-bottom: 50rpx;
+}
+.layout{
+  margin-top: 18rpx;
+  margin-left: 30rpx;
+  width: 690rpx;
+  /* height: 500rpx; */
+  background-color: rgba(255,255,255,1);
+  border-radius:10px;
+}
+.cover_img{
+  width: 690rpx;
+  height: 294rpx;
+  border-radius:10rpx 10rpx 0rpx 0rpx;
+}
+.title{
+  margin-left: 39rpx;
+  margin-top: 21rpx;
+  width: 608rpx;
+  /* height:101rpx; */
+  font-size:38rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:48rpx;
+  color:rgba(26,26,26,1);
+  opacity:1;
+}
+.detail_layout{
+ padding-bottom: 35rpx;
+}
+.detail{
+  margin-left: 39rpx;
+  margin-top: 12rpx;
+ 
+  width:598rpx;
+height:75rpx;
+font-size:26rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:38rpx;
+
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color:rgba(128,128,128,1);
+  opacity:1;
+}

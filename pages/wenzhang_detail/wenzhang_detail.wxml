@@ -1,0 +1,94 @@
+<!-- <view class="container" > -->
+
+<scroll-view class="container"  enable-flex='true' scroll-y scroll-top="{{scrollTop}}" bindscroll="bindscroll">
+<!-- style="height:{{height + 'px'}};" -->
+  <view class="mp3_layout" wx:if="{{mp3}}">
+    <image class='play' src="../../images/play.png" wx:if="{{!isplay}}" catchtap='playAudio'/>
+    <image class='play' src="../../images/pause.png" wx:else="{{isplay}}" catchtap='playAudio'/>
+    <text class='time'>{{showTime1}}</text>
+    <slider class="slider" bindchange='sliderChange' block-color="#0CCDA3" block-size="12" value="{{audioTime}}" backgroundColor="#EBEBEB" activeColor="#0CCDA3" />
+    <text class='time'>{{showTime2}}</text>
+  </view>
+
+  <view class="wenzhang">
+    <view class="title">{{wz_content.title}}</view>
+    <view class="dsh_layout">
+      <text class="ljdsh">领军读书会</text>
+      <text class="publish_time">{{wz_content.dateline}}</text>
+    </view>
+
+    <video class="video" src="{{wz_content.mediaurl}}" wx:if="{{mp4}}"></video>
+
+    <view class="rich_layout">
+      <rich-text class="rich_text" nodes="{{wswz}}"></rich-text>
+    </view>
+    
+    
+  </view>
+
+
+  <view class="layout_hot" wx:if="{{relation != ''}}">
+    <view class="shu"></view>
+    <view class="hotRecommend">继续阅读</view>
+  </view>
+
+  
+
+  <view class="cont_" wx:if="{{relation != ''}}">
+    <view class="cont_layout" wx:for="{{relation}}" wx:key="index_re" data-nid="{{item.nid}}" data-bid="{{item.bid}}" bindtap="cont_cump">
+      <image class="cont_cover_img" src="{{item.avatar}}" ></image>
+      <view class="cont_title" >{{item.title}}</view>
+      <view class="detail_layout">
+        <view class="cont_detail" >{{item.intro}}</view>
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+
+  <view class="layout_hot">
+    <view class="shu"></view>
+    <view class="hotRecommend">留言板</view>
+  </view>
+
+  <view class="message_title" >
+    <textarea class="edit_message" value="{{content}}" placeholder="来都来了，那就说两句再走吧~" placeholder-style="color:#D5D5D5;font-size:28rpx;" bindinput="edit_message"  maxlength="500" adjust-position="true" cursor-spacing="120"></textarea>
+    <view class="publish"><text class="fb" bindtap="post_message">发表</text></view>
+  </view>
+
+  <view class="cccsss">
+  <view class="message_layout" wx:for='{{get_message}}' wx:key='index_messgae' >
+    <image class="message_avatar" src="{{item.avatar}}"></image>
+    <view class="message_layout1">
+      <text class="nickname">{{item.nick}}</text>
+      <text class="message">{{item.content}}</text>
+      <view class="editor_layout" wx:if="{{item.reply}}">
+        <view class="editor_shu"></view>
+        <text class="editor">小编</text>
+      </view>
+      <text class="editor_reply" wx:if="{{item.reply}}">{{item.reply}}</text>
+    </view>
+  </view>
+  </view>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</scroll-view>
+
+
+

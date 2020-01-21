@@ -1,0 +1,112 @@
+<view class="container">
+  <view class="layout1">
+      <view class="book">
+        <image class="avatar" src="{{book_detail.thumb}}"></image>
+        <view class="update">
+          <view class="update_time"> 更新：{{book_detail.dateline}}</view>
+          </view>
+        <view class="book_detail">
+          <text class="book_name">{{book_detail.title}}</text>
+          <view class="author_detail">
+            <text class="book_author">作者：{{book_detail.author}}</text>
+            <text class="book_author">译者：{{book_detail.translator}}</text>
+            <text class="book_author">主播：{{book_detail.anchor}}</text>
+          </view>
+          <view class="book_btn">
+            <button class="login_read" wx:if="{{!islogin}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" data-type="{{1}}"></button>
+            <view class="read_btn" wx:if="{{!isread}}" bindtap="go_read" data-chapterid="{{last_chapter}}" ><image  class="read_img" src="../../images/read.png"></image> 去阅读</view>
+            <view class="read_btn" wx:else="" bindtap="go_read" data-chapterid="{{last_chapter}}"><image class="read_img" src="../../images/read.png"></image> 继续阅读</view>
+            <button class="login_add" wx:if="{{!islogin}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" data-type="{{2}}"></button>
+            <view class="get_btn" wx:if="{{book_detail.oid > 0}}"><image class="add_img" src="../../images/get.png" ></image> 已加入</view>
+            <view class="add_btn" wx:else="" bindtap="add"><image class="add_img" src="../../images/add.png" ></image> 加入书架</view>
+          </view>
+      </view>
+    </view>
+
+    <view class="book_comment">
+      <view class="comment_mun">
+        <image class="man" src="../../images/man.png"></image>
+        <view class="reading"><view style="color:#0CCDA3;">{{re_num}}人</view>正在阅读</view>
+        <view class="layout_comment" wx:if="{{book_comment != ''}}">
+          <view class="more" bindtap="go_more_comment">更多评论</view>
+          <image class="right_arrow" src="../../images/youjiantou.png" bindtap="go_more_comment"></image>
+        </view>
+
+      </view>
+
+      <view wx:if="{{good_comment != ''}}">
+          <view class="comment_user" >
+            <image class="user_avatar" src="{{good_comment.avatar}}"></image>
+            <view class="user">
+              <view class="user_name">{{good_comment.nick}}</view>
+              <view class="comment_time">{{good_comment.dateline}}</view>
+            </view>
+            <view class="show_star">
+              <block wx:for="{{good_comment.star}}" wx:key="item">
+                <image class="star" src='../../images/star.png'></image>
+              </block>
+              <block wx:for="{{5 - good_comment.star}}" wx:key="item">
+                <image class="star" src='../../images/starg.png'></image>
+              </block>
+            </view>
+          </view>
+          <view class="comment_content" >{{good_comment.content}}</view>
+        </view>
+      </view>
+     
+
+    <view class="click_comment">
+      <view class="click_title">轻点评价</view>
+      <view class="click_star">
+        <block wx:for="{{two_2}}" wx:key="index">
+          <image class="clickstar" catchtap='in_xin' id='{{index+1}}' data-in='star' src='../../images/starg.png'></image>
+          <button class="login_star" wx:if="{{!islogin}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" data-type="{{4}}"></button>
+        </block>
+      </view>
+    </view>
+
+  </view>
+  <image class="henghengheng" src="../../images/henghengheng.png"></image>
+
+    <!-- <scroll-view  scroll-x="true" class="tab-h" >
+      <view wx:for="{{caption}}" wx:key="index" class="tab-item {{current==index?'active':''}}" data-current="{{index}}"      bindtap="swichNav">{{item}}</view> 
+       <button class="login" wx:if="{{!islogin}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" data-type="{{3}}"></button>
+  </scroll-view>  -->
+  <view class="menu_layout">
+    <view class="tab-item {{current==0?'active':''}}" bindtap="swichNav" data-current="0">推荐语</view>
+    <view class="tab-item {{current==1?'active':''}}" bindtap="swichNav" data-current="1">目录</view>
+    <button class="login" wx:if="{{!islogin}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" data-type="{{3}}"></button>
+  </view>
+
+  <view class="heng_heng"></view>
+
+  <view wx:if="{{current == 0}}" class="Recommended">
+    <view class="Recommended_content">
+      <rich-text nodes="{{book_detail.intro}}"></rich-text>
+    </view> 
+    
+  </view>
+
+ 
+
+  <view class="catalog" wx:if="{{current == 1}}">
+    
+     
+      <view  wx:for="{{catelog}}" wx:key="this" data-chapterid="{{item.id}}" bindtap="go_read">
+      <view class="ccccs">
+        <text class="chapter_num">{{item.chapter}}</text>
+        <text class="chapter_content" >{{item.title}}</text>
+      </view>
+     
+      
+     
+    </view>
+  </view>
+  
+
+
+
+
+
+
+</view>

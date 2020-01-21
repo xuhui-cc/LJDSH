@@ -1,0 +1,83 @@
+<!-- <view class="container" style="height:{{height + 'px'}};"> -->
+<scroll-view class="container"  enable-flex='true' scroll-y scroll-top="{{scrollTop}}" bindscroll="bindscroll">
+  <view class="bottom">
+  <view class="mp3_layout" wx:if="{{mp3}}">
+    <image class='play' src="../../images/play.png" wx:if="{{!isplay}}" catchtap='playAudio'/>
+    <image class='play' src="../../images/pause.png" wx:else="{{isplay}}" catchtap='playAudio'/>
+    <text class='time'>{{showTime1}}</text>
+    <slider class="slider" bindchange='sliderChange' block-color="#0CCDA3" block-size="12" value="{{audioTime}}" backgroundColor="#EBEBEB" activeColor="#0CCDA3" />
+    <text class='time'>{{showTime2}}</text>
+  </view>
+  
+    <view class="heng" wx:if="{{mp3}}"></view>
+    <view class="menu">
+      <image class="menu_icon" wx:if='{{!menu}}' src="../../images/menu.png" bindtap="translate"></image>
+      <image class="menu_icon" wx:else=''  src="../../images/back.png" bindtap="success"></image>
+      <text class="last" data-type="{{1}}" bindtap="cump" >上章</text>
+      <view class="shu"></view>
+      <text class="next" data-type="{{2}}" bindtap="cump" >下章</text>
+    </view>
+  </view>
+  
+<view class="mask" wx:if="{{menu}}" bindtap="success"></view>
+  <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-element" animation="{{animation}}">
+
+  <!-- <view catchtouchmove="preventTouchMove" wx:if='{{menu}}'> -->
+    
+    <view class="mask_menu">
+    <view class="menu_height">
+    <view class="chapter"  wx:for="{{catalog}}" wx:for-item="list"  data-chapterid="{{list.id}}" bindtap="menu_select">
+        <view class="ccccs">
+          <view class="{{list.cur_read ? 'chapter_num1':'chapter_num'}}">{{list.chapter}}</view>
+          <view class="{{list.cur_read ? 'chapter_content1':'chapter_content'}}">{{list.title}}</view>
+      </view>
+    </view>
+    </view>
+      <!-- <view  wx:for="{{catalog}}" wx:key="{{catalog_index}}">
+      <text class="phase">{{item.title}}</text> -->
+      
+  
+    <!-- <view class="back">
+      <image class="back_menu_icon" src="../../images/back.png" bindtap="success"></image>
+        <view class="back_last" data-type="{{1}}" bindtap="cump" >上章</view>
+        <view class="back_next" data-type="{{2}}" bindtap="cump" >下章</view>
+    </view> -->
+  </view>
+    </view>
+
+  </view>
+ 
+
+  <view class="wenzhang">
+    
+
+      <view class="title">{{chapter_content.title}}</view>
+      <view class="dsh_layout">
+        <text class="ljdsh">领军读书会</text>
+        <text class="publish_time">{{chapter_content.dateline}}</text>
+      </view>
+      <video class="video" src="{{mp4url}}" wx:if="{{mp4}}"></video>
+      <view class="book_richtext">
+        <!-- <rich-text class="rich_text" nodes="{{chapter_content.content}}"></rich-text> -->
+        <rich-text class="rich_text" nodes="{{wscs}}"></rich-text>
+      </view>
+     
+
+      <!-- <text>{{chapter_content.content}}</text> -->
+
+
+
+  </view>
+
+  
+ 
+
+  
+
+
+
+
+</scroll-view>
+<!-- </view> -->
+

@@ -1,0 +1,226 @@
+/* pages/search/search.wxss */
+.layout1{
+  display: flex;
+  margin-left: 30rpx;
+  margin-top: 27rpx;
+}
+.layout11{
+  display: flex;
+  width:594rpx;
+  height:74rpx;
+  background:rgba(242,243,247,1);
+  opacity:1;
+  border-radius:35rpx;
+}
+.search_icon{
+  margin-left: 30rpx;
+  margin-top: 21rpx;
+  width: 29rpx;
+  height: 30rpx;
+}
+.search_content{
+  margin-left: 15rpx;
+  margin-top: 16rpx;
+  width:450rpx;
+  height:35rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:50rpx;
+  color:#3A3A3A;
+  opacity:1;
+}
+.cancle{
+  margin-left: 34rpx;
+  margin-top: 16rpx;
+  width:60rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:50rpx;
+  color:rgba(139,139,139,1);
+  opacity:1;
+}
+.tip{
+  margin-left: 48rpx;
+  margin-top: 32rpx;
+  width:156rpx;
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:50rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.hot_search{
+  display: flex;
+  flex-wrap: wrap;
+  width: 650rpx;
+  margin-left: 43rpx;
+}
+.bg_name{
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  height:60rpx;
+  background:rgba(249,249,249,1);
+  opacity:1;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius:33rpx;
+}
+.name{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:50rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.no_content{
+  display: flex;
+  flex-direction: column ;
+  width: 750rpx;
+  /* height: 700rpx; */
+  text-align: center;
+}
+.nosearch{
+  margin-left: 280rpx;
+  margin-top: 330rpx;
+  width: 227rpx;
+  height: 235rpx;
+}
+.tip1{
+  margin-top: 30rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:48rpx;
+  color:rgba(187,187,187,1);
+  opacity:1;
+}
+.tip2{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:48rpx;
+  color:rgba(219,219,219,1);
+  opacity:1;
+}
+.search_list{
+  margin-left: 30rpx;
+  margin-top: 51rpx;
+  display: flex;
+  flex-direction: column;
+}
+.search_book{
+  margin-bottom: 30rpx;
+  
+}
+.book_cover{
+  width: 199rpx;
+  height: 283rpx;
+}
+.book{
+  display: flex;
+
+}
+.search_book_sure{
+  margin-bottom: 63rpx;
+  display: flex;
+}
+.book_cover_sure{
+  width: 199rpx;
+  height: 283rpx;
+   border-radius:4rpx;
+}
+.book_sure{
+  margin-top: 18rpx;
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+.name_sure{
+  height:40rpx;
+  font-size:35rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:35rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.author_sure{
+  margin-top: 20rpx;
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:33rpx;
+  color:rgba(184,184,184,1);
+  opacity:1;
+}
+.detail_sure{
+  margin-top: 35rpx;
+  width:429rpx;
+ 
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:41rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color:rgba(128,128,128,1);
+  opacity:1;
+}
+
+.book_name{
+  /* margin-left: 30rpx; */
+  width: 473rpx;
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  line-height:45rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  /* background-color: rgba(58,58,58,1); */
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.author{
+  
+  width: 217rpx;
+  height:45rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:45rpx;
+  text-align: right;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  /* background-color: rgba(184,184,184,1); */
+  color:rgba(184,184,184,1);
+  opacity:1;
+}
+.heng{
+  margin-top: 10rpx;
+  width:685rpx;
+  height:0rpx;
+  border:1rpx solid rgba(241,241,241,1);
+  opacity:1;
+}

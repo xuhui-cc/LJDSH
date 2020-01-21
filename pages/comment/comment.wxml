@@ -1,0 +1,29 @@
+<view class="container">
+
+  <view class="show_star">
+    <view wx:for="{{star}}" wx:key="index">
+      <image class="star" id='{{index+1}}' src='../../images/star.png' bindtap="comment_star1"></image>
+    </view>
+    <view wx:for="{{gray}}" wx:key="item">
+      <image class="star"  id='{{index+1}}' src='../../images/starg.png' bindtap="comment_star2"></image>
+    </view>
+  </view>
+  <view class="heng"></view>
+  <view class="comment">
+    <textarea class="content" placeholder="请输入您的评价......" bindinput="comment" maxlength="500"></textarea>
+  </view>
+  <view class="publish_btn" bindtap="post_comment">发表评论</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

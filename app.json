@@ -1,0 +1,50 @@
+{
+  "pages": [
+   "pages/first_page/first_page",
+   "pages/wenzhang/wenzhang",
+   "pages/shujia/shujia",
+   "pages/wenzhang_detail/wenzhang_detail",
+   "pages/classify/classify",
+   "pages/book_detail/book_detail",
+   "pages/comment/comment",
+   "pages/read_detail/read_detail",
+   "pages/more_comment/more_comment",
+    "pages/web_view/web_view",
+   "pages/search/search"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+ 
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": false,
+    "color": "#999999",
+    "selectedColor": "#0CCDA3",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "text": "文章",
+        "pagePath": "pages/wenzhang/wenzhang",
+        "iconPath": "images/wenzhang1.png",
+        "selectedIconPath": "images/wenzhang2.png"
+      },
+      {
+        "text": "书城",
+        "pagePath": "pages/first_page/first_page",
+        "iconPath": "images/shucheng1.png",
+        "selectedIconPath": "images/shucheng2.png"
+      },
+      {
+        "text": "书架",
+        "pagePath": "pages/shujia/shujia",
+        "iconPath": "images/shujia1.png",
+        "selectedIconPath": "images/shujia2.png"
+      }
+    ]
+  }
+}

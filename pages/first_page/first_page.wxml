@@ -1,0 +1,91 @@
+<view class="container">
+  <cover-view class="nabigation_bar">
+    <cover-image class="search" src="../../images/search.png" bindtap="search"></cover-image>
+    <cover-view class="tltle">领军读书会</cover-view>
+  </cover-view>
+  <swiper class="swiper_container" autoplay="true"  interval="2500" circular="true" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(12,205,163,1)">
+     <block wx:for="{{ad}}" wx:key='ad_index'>
+         <swiper-item>
+          <image  class="ad_img" src="{{item.avatar}}" mode="widthFix" bindtap="ad_detail" data-url="{{item.link}}"  data-bid="{{item.bid}}"></image>
+         </swiper-item>
+     </block>
+   </swiper>
+
+  <scroll-view  scroll-x="true" class="scroll_classification">
+    <view wx:for="{{classification}}" wx:key="classification_index" class='classification_project' >
+      <image class="classification_img" src="{{item.avatar}}" mode="widthFix" bindtap="classification_select" data-sid="{{item.id}}"></image>
+      <view class="classification_name" data-sid="{{item.id}}">{{item.title}}</view>
+    </view> 
+  </scroll-view> 
+
+  <view class="heng"></view>
+
+  <view class="layout_hot">
+    <view class="shu"></view>
+    <view class="hotRecommend">热门推荐</view>
+  </view>
+
+  <scroll-view  scroll-x="true" class="scroll_hotbook" enable-flex="true">
+    <view wx:for="{{hotbook}}" wx:key="hotbook_index" class='hotbook_project' data-bid="{{item.id}}" bindtap="to_book_detail">
+      <image class="hotbook_img" src="{{item.thumb}}" ></image>
+      <view class="hotbook_name">{{item.title}}</view>
+    </view> 
+  </scroll-view> 
+
+  <view class="layout_hot">
+    <view class="shu"></view>
+    <view class="hotRecommend">每日分享</view>
+  </view>
+
+   <!-- <image src="{{imagePath}}" class='share'></image> -->
+    <canvas class="canvas" canvas-id="mycanvas" data-bid="{{share[0].id}}" bindtap="to_book_detail"/>
+    <cover-image class="share_btn" src="../../images/share_btn.png"></cover-image>
+    <cover-view class="share_btn" bindtap="baocun" wx:if="{{islogin}}">保存</cover-view>
+    <cover-view class="login_cover" wx:else="{{}}">
+      <button class="login" open-type="getUserInfo" bindgetuserinfo="getuserinfo" >保存</button>
+    </cover-view>
+    
+
+
+  <view class="layout_time">
+    <view class="shu"></view>
+    <view class="roll_time">时间书轴</view>
+    <picker mode="date" fields="year" value="{{date}}" start="{{minyear}}" end="{{maxyear}}" bindchange="bindDateChange">
+     <view class="year">{{date}}</view>
+    </picker>
+   
+    <picker mode="date" fields="year" value="{{date}}" start="{{minyear}}" end="{{maxyear}}" bindchange="bindDateChange">
+      <image class="picker_xia" src="../../images/sanjiao_xia.png"></image>
+    </picker>
+    
+  </view>
+
+  <scroll-view  scroll-x="true" class="tab-h" scroll-into-view='{{toView}}'>
+    <view wx:for="{{month}}" wx:key="index" class="tab-item {{current_month==index?'active':''}}"  data-current="{{index}}" bindtap="swichNav" id ="{{'item' + index}}">{{index + 1 }}月</view> 
+  </scroll-view> 
+
+  <view class="search_list" wx:if="{{axis}}">
+    <view class="search_book" wx:for="{{book_axis}}" wx:key='{{index_book}}' data-bid="{{item.id}}" bindtap="to_book_detail">
+    <image class="book_cover" src="{{item.thumb}}"></image>
+      <view class="book">
+        <text class="name">{{item.title}}</text>
+        <text class="author">{{item.author}}</text>
+        <view class="detail">
+          <!-- <rich-text nodes="{{item.intro}}"></rich-text> -->
+          {{item.intro}}
+        </view>
+        
+      </view>
+    </view>
+  </view>
+
+  <view class="null_axis" wx:else="">
+    <image class="null_img" src="../../images/null_axis.png"></image>
+    <text class="text_null1">没有内容哦</text>
+    <text class="text_null2">本月没有出新书，看看其他月份吧~</text>
+  
+  </view>
+
+
+
+</view>

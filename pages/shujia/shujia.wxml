@@ -1,0 +1,104 @@
+<view class="container">
+  <view class="layout1">
+    <view class="layout11">
+      <image class="touxiang" src="../../images/wutouxiang.png" wx:if='{{!islogin}}'></image>
+      <image class="touxiang" src="{{avatar}}" wx:else=''></image>
+      <button class="login" open-type="getUserInfo" bindgetuserinfo="getuserinfo" wx:if='{{!islogin}}'></button>
+      <view class="username" wx:if='{{!islogin}}'>点击登录</view>
+      <view class="username" wx:else=''>{{nick}}</view>
+    </view>
+    <view class="layout12" wx:if='{{!islogin}}'>
+      <view class="layout121">
+        <text class="read_time"><text class="time">00</text>小时<text class="time">00</text>分</text>
+        <text class="week_time">本周阅读时长</text>
+      </view>
+      <view class="shu"></view>
+      <view class="layout121">
+        <text class="read_time"><text class="time">00</text>小时<text class="time">00</text>分</text>
+        <text class="week_time">总阅读时长</text>
+      </view>
+    </view>
+    <view class="layout12" wx:else=''>
+      <view class="layout121">
+        <text class="read_time"><text class="time">{{week_hour}}</text>小时<text class="time">{{week_min}}</text>分</text>
+        <text class="week_time">本周阅读时长</text>
+      </view>
+      <view class="shu"></view>
+      <view class="layout121">
+        <text class="read_time"><text class="time">{{total_hour}}</text>小时<text class="time">{{total_min}}</text>分</text>
+        <text class="week_time">总阅读时长</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="heng_heng"></view>
+
+  <view class="layout2">
+
+    
+
+    <view  class="my_book">
+      <view class="shu2"></view>
+      <view class="hotRecommend">我的书架</view>
+      <view wx:if="{{islogin}}">
+        <view wx:if="{{mybook != ''}}">
+          <view class="edit"  wx:if='{{edit}}' bindtap="edit">取消</view>
+          <view class="edit" bindtap="edit" wx:else>编辑</view>
+        </view>
+      </view>
+      
+    </view>
+
+    <view wx:if="{{!islogin}}" class="login_kong">
+      <image class="kong" src="../../images/kong.png"></image>
+      <text class="text1">您还没有登录</text>
+    </view>
+
+    <view wx:if = "{{islogin}}" >
+      <view wx:if="{{mybook == ''}}" class="login_kong">
+        <image class="kong" src="../../images/kong.png"></image>
+        <text class="text1">还空空荡荡的</text>
+        <text class="text2">快去添加你的书籍吧~</text>
+      </view> 
+
+      <view class="mybook" wx:else="">
+        <view class="layout_book" wx:for='{{mybook}}' wx:key='index' >
+          <image class="bookcover" src="{{item.thumb}}" data-bid="{{item.bid}}" bindtap="to_book_detail"></image>
+          <view class="mask" catchtouchmove="preventTouchMove" wx:if='{{edit}}'></view>
+          <image class="del" src="../../images/del.png" bindtap="del" wx:if='{{edit}}' data-book_title="{{item.title}}"  data-bid="{{item.bid}}"></image>
+          <text class="bookname" data-bid="{{item.bid}}" bindtap="to_book_detail">{{item.title}}</text>
+        </view>
+      </view>    
+    </view>
+    
+  </view>  
+
+  <view class="tip_mask" catchtouchmove="preventTouchMove" wx:if='{{tip_mask}}'></view>
+    <view class="tip_layout" wx:if='{{tip_mask}}'>
+      <view class="text_layout">
+        <text class="tip_content">确定将《{{book_title}}》移出我的书籍？</text>
+      </view>
+      <view class="heng"></view>
+      <view class="btn_layout">
+        <view class="no" bindtap="no">取消</view>
+        <view class="shu3"></view>
+        <view class="yes" bindtap="yes">确定</view>
+      </view>
+    </view>   
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</view>

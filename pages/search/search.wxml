@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="layout1">
+    <view class="layout11">
+      <image class="search_icon" src="../../images/search.png"></image>
+      <input class="search_content" placeholder="请输入书籍名称" bindinput="search" bindblur='search_sure'   value="{{search_content}}"></input>
+    </view>
+    <view class="cancle">取消</view>
+  </view>
+
+  <view class="tip" wx:if="{{search_content == ''}}">大家都在搜：</view>
+
+  <view class="hot_search" wx:if="{{search_content == ''}}">
+    <view class="bg_name" wx:for='{{hotword}}' wx:key='{{index}}'>
+      <text class="name" data-search_content="{{item.title}}" bindtap="hot_search">{{item.title}}</text>
+    </view>
+  </view>
+
+  <view  wx:if="{{search_content != ''}}">
+    <view class="no_content" wx:if="{{searchbook == ''}}">
+      <image class="nosearch" src="../../images/nosearch.png"></image>
+      <text class="tip1">搜索结果为空</text>
+      <text class="tip2">要不换个关键词试试~</text>
+    </view>
+
+    <view class="search_list" wx:if='{{!sure}}'>
+      <view class="search_book" wx:for="{{searchbook}}" wx:key='{{index_book}}' data-bid="{{item.id}}" bindtap="to_book_detail">
+        <view class="book">
+          <text class="book_name">{{item.title}}</text>
+          <text class="author">{{item.author}}</text>
+        </view>
+        <view class="heng"></view>
+          
+        
+      </view>
+  </view>
+
+  <view class="search_list" wx:if='{{sure}}'>
+    <view class="search_book_sure" wx:for="{{searchbook}}" wx:key='{{index_book}}' data-bid='{{item.id}}' bindtap="to_book_detail">
+      <image class="book_cover_sure" src="{{item.thumb}}"></image>
+      <view class="book_sure">
+        <text class="name_sure">{{item.title}}</text>
+        <text class="author_sure">{{item.author}}</text>
+        <text class="detail_sure">{{item.intro}}</text>
+
+      </view>
+    </view>
+  
+  </view>
+
+
+  
+  
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

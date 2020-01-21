@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class="cs">
+  
+  <view class="wenzhang" wx:for='{{wenzhang}}' wx:key='{{index}}'>
+    <view class="date">{{item.dateline}}</view>
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="getuserinfo" wx:if="{{!islogin}}" data-index="{{index}}"></button>
+    <view class="layout"  bindtap="go_wenzhang_detail" data-wz_id="{{item.id}}">
+      <image class="cover_img" src="{{item.avatar}}" ></image>
+      <view class="title" >{{item.title}}</view>
+      <view class="detail_layout">
+        <view class="detail" >{{item.intro}}</view>
+      </view>
+      
+    </view>
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+</view>

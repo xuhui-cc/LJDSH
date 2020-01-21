@@ -1,0 +1,358 @@
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.nabigation_bar{
+  position: fixed;
+  width: 750rpx;
+  height: 160rpx;
+  background: rgba(255,255,255,1); 
+  display: flex;
+  z-index: 100;
+}
+.search{
+  margin-left: 35rpx;
+  margin-top: 100rpx;
+  width: 35rpx;
+  height:37rpx;  
+}
+.tltle{
+  margin-left: 205rpx;
+  margin-top: 90rpx;
+  width:185rpx;
+  height:52rpx;
+  font-size:32rpx;
+  text-align: center;
+  font-weight:bold;
+  line-height:52rpx;
+  color:rgba(0,0,0,1);
+  opacity:1;
+}
+.swiper_container{
+  margin-top: 155rpx;
+  width: 750rpx;
+  height:304rpx;           
+}
+.ad_img{
+  
+  width: 750rpx;
+  height:304rpx;  
+}
+.scroll_classification{
+  margin-top: 30rpx;
+  width: 750rpx; 
+  box-sizing: border-box; 
+  overflow: hidden; 
+  line-height: 42rpx; 
+  background: rgba(255,255,255,1); 
+  white-space: nowrap;  
+}
+.classification_project{
+  display: inline-block; 
+  margin-right: 43rpx;
+}
+.classification_img{
+  margin-left: 45rpx;
+  width: 76rpx;
+  height: 76rpx;
+}
+.classification_name{
+  margin-top: 5rpx;
+  margin-left: 59rpx;
+  width:48rpx;
+  height:25rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:25rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.heng{
+  margin-top: 29rpx;
+  width:750rpx;
+  height:0rpx;
+  border:1rpx solid rgba(241,241,241,1);
+  opacity:1;
+}
+.layout_hot{
+  display: flex;
+  margin-top: 40rpx;
+  margin-left: 31rpx;
+  width: 750rpx;
+}
+.shu{
+  margin-top: 17rpx;
+  width:7rpx;
+  height:20rpx;
+  background:rgba(12,205,163,1);
+  opacity:1;
+  border-radius:173rpx;
+}
+.hotRecommend{
+  margin-left: 16rpx;
+  width:230rpx;
+  height:53rpx;
+  font-size:38rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:50rpx;
+  color:rgba(26,26,26,1);
+  opacity:1;
+}
+
+.scroll_hotbook{
+  display: flex;
+  padding-top: 22rpx;
+  /* padding-right: 30rpx; */
+  
+  width: 750rpx; 
+  height: 400rpx;
+  box-sizing: border-box; 
+  overflow: hidden; 
+  line-height: 42rpx; 
+  background: rgba(255,255,255,1); 
+  /* white-space: nowrap;   */
+}
+.hotbook_project{
+  width: 200rpx;
+  display: inline-block; 
+  margin-right: 25rpx;
+  
+}
+.hotbook_img{
+  margin-left: 25rpx;
+  width: 199rpx;
+  height: 283rpx;
+  border-radius:4rpx;
+}
+
+.hotbook_name{
+  display: block;
+  margin-top: 15rpx;
+  margin-left: 25rpx;
+  width:190rpx;
+  height: 70rpx;
+  text-align: center;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:35rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.canvas{
+  width: 750rpx;
+  height: 870rpx;
+}
+.share_btn{
+  position: absolute;
+  margin-top: 1915rpx;
+  margin-left: 531rpx;
+  width: 162rpx;
+  height: 90rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  text-align: center;
+  line-height:80rpx;
+  color:rgba(255,255,255,1);
+  opacity:1;
+  z-index: 5;
+}
+.login_cover{
+  position: absolute;
+  margin-top: 1915rpx;
+  margin-left: 531rpx;
+  width: 162rpx;
+  height: 90rpx;
+  z-index: 5;
+}
+.login{
+  
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  text-align: center;
+  line-height:80rpx;
+  color:rgba(255,255,255,1);
+  /* background-color: rgba(58,58,58,1); */
+  background: transparent;
+  z-index: 5;
+}
+.login::after {
+  border: none;
+}
+.layout_time{
+  display: flex;
+  margin-top: 10rpx;
+  margin-left: 31rpx;
+}
+.roll_time{
+  margin-left: 16rpx;
+  width:550rpx;
+  height:53rpx;
+  font-size:38rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:50rpx;
+  color:rgba(26,26,26,1);
+  opacity:1;
+}
+.year{
+  margin-top: 10rpx;
+  width:90rpx;
+  height:48rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:50rpx;
+  color:rgba(26,26,26,1);
+  opacity:1;
+}
+.picker_xia{
+ margin-top: 32rpx;
+  width: 16rpx;
+  height: 9rpx;
+}
+.tab-h{ 
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+  width: 750rpx; 
+  box-sizing: border-box; 
+  overflow: hidden; 
+  line-height: 42rpx; 
+  background: rgba(255,255,255,1); 
+  white-space: nowrap;  
+} 
+.tab-item{ 
+  padding-bottom: 10rpx;
+  width:75rpx;
+  height:42rpx;
+  margin:0 20rpx; 
+  display: inline-block; 
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:42rpx;
+  color:rgba(136,136,136,1);
+  opacity:1;
+} 
+.tab-item.active{ 
+  padding-bottom: 10rpx;
+  position: relative; 
+  width:75rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-weight:bold;
+  font-family:PingFang SC;
+  line-height:42rpx;
+  color:rgba(26,26,26,1);
+  opacity:1;
+} 
+.tab-item.active:after{
+  content: ""; 
+  display: block; 
+  height: 4rpx; 
+  width: 30%; 
+  background: rgba(12,205,163,1);
+  position: absolute;  
+  bottom: 0;
+  left: 17rpx; 
+} 
+.search_list{
+  margin-left: 35rpx;
+  margin-top: 51rpx;
+  display: flex;
+  flex-direction: column;
+}
+.search_book{
+  margin-bottom: 63rpx;
+  display: flex;
+}
+.book_cover{
+  width: 199rpx;
+  height: 283rpx;
+  border-radius:4rpx;
+}
+.book{
+  margin-top: 18rpx;
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+.name{
+  height:40rpx;
+  font-size:35rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  line-height:35rpx;
+  color:rgba(58,58,58,1);
+  opacity:1;
+}
+.author{
+  
+  margin-top: 20rpx;
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:33rpx;
+  color:rgba(184,184,184,1);
+  opacity:1;
+}
+.detail{
+  margin-top: 35rpx;
+  width:429rpx;
+ 
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:41rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color:rgba(128,128,128,1);
+  opacity:1;
+}
+.null_axis{
+  display: flex;
+  flex-direction: column;
+  height: 529rpx;
+}
+.null_img{
+  margin-left: 262rpx;
+  margin-top: 102rpx;
+  width: 227rpx;
+  height: 208rpx;
+}
+.text_null1{
+  margin-left: 300rpx;
+  margin-top: 35rpx;
+  width:150rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:48rpx;
+  color:rgba(187,187,187,1);
+  opacity:1;
+}
+.text_null2{
+  margin-left: 174rpx;
+  margin-top: 5rpx;
+  width:410rpx;
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:48rpx;
+  color:rgba(219,219,219,1);
+  opacity:1;
+}

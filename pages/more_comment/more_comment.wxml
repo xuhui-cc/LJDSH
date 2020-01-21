@@ -1,0 +1,36 @@
+<view class="container">
+
+  <view class="book_comment" wx:for="{{comment}}">
+    <view class="comment_user">
+      <image class="user_avatar" src="{{item.avatar}}"></image>
+        <view class="comment">
+          <view class="comment_hang1">
+            <view class="user">
+              <view class="user_name">{{item.nick}}</view>
+              <view class="comment_time">{{item.dateline}}</view>
+            </view>
+            <view class="show_star">
+              <block wx:for="{{item.star}}" wx:key="item">
+                <image class="star" src='../../images/star.png'></image>
+              </block>
+              <block wx:for="{{5 - item.star}}" wx:key="item">
+                <image class="star" src='../../images/starg.png'></image>
+              </block>
+            </view>
+          </view>
+          <view class="comment_content">{{item.content}}</view>
+        </view>
+      </view>
+    <view class="heng"></view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+</view>

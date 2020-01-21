@@ -1,0 +1,31 @@
+<view class="container">
+
+  <scroll-view  scroll-x="true" class="tab-h" >
+    <view wx:for="{{classify}}" wx:key="index" class="tab-item {{current_classify==index?'active':''}}" data-current="{{index}}" data-sid="{{item.id}}" bindtap="swichNav">{{item.title}}</view> 
+  </scroll-view> 
+
+  <view wx:if="{{classify_book == ''}}" class="classify_book">
+    <image class="null" src="../../images/null.png"></image>
+    <text class="null_tip1">暂时没有书籍哦</text>
+    <text class="null_tip2">去其他的类别下看看吧</text>
+  </view>
+
+  <view class="search_list">
+    <view class="search_book" wx:for="{{classify_book}}" wx:key='{{index_book}}' data-bid='{{item.id}}' bindtap="to_book_detail">
+      <image class="book_cover" src="{{item.thumb}}"></image>
+      <view class="book">
+        <text class="name">{{item.title}}</text>
+        <text class="author">{{item.author}}</text>
+        <text class="detail">{{item.intro}}</text>
+        <!-- <view class="detail">
+          <rich-text nodes="{{item.intro}}"></rich-text>
+          
+        </view> -->
+      </view>
+    </view>
+  
+  </view>
+
+
+</view>
+
